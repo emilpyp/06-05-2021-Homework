@@ -10,8 +10,13 @@ public class StringProcessing {
 
         for(String s: words){
             if (!noDuplicates.contains(s)) {
+                counter++;
                 noDuplicates.add(s);
                 newSentence.append(s).append(", ");
+                if(counter == 15) {
+                    newSentence.append("\n");
+                    counter = 0;
+                }
             }
         }
         System.out.println(newSentence);
